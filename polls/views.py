@@ -3,15 +3,17 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from requests import get
 
+heroku = "https://guarded-beyond-82270.herokuapp.com/"
+
 
 class Lista:
     def __init__(self, tipo, id, *args):
         if tipo == "episode":
-            self.url = "https://guarded-beyond-82270.herokuapp.com/" + str(id)
+            self.url = heroku + "episodio/" + str(id)
         elif tipo == "character":
-            self.url = "https://guarded-beyond-82270.herokuapp.com/" + str(id)
+            self.url = heroku + "personaje/" + str(id)
         elif tipo == "location":
-            self.url = "https://guarded-beyond-82270.herokuapp.com/" + str(id)
+            self.url = heroku + "lugar/" + str(id)
         self.texto = paragraph(*args)
 
 
@@ -57,9 +59,9 @@ def episodio(request, epi_id):
 def personaje(request, char_id):
     c = get(cha + "/" + char_id).json()
     texto = [c["name"], c["status"], c["species"], c["type"], c["gender"],
-             c["location"]["name"], "https://guarded-beyond-82270.herokuapp.com//lugar/" + c["location"]["url"].split("/")[-1]]
+             c["location"]["name"], heroku + "lugar/" + c["location"]["url"].split("/")[-1]]
     origen_nombre = c["origin"]["name"]
-    origen_url = "https://guarded-beyond-82270.herokuapp.com//lugar/" + c["origin"]["url"].split("/")[-1]
+    origen_url = heroku + "lugar/" + c["origin"]["url"].split("/")[-1]
     foto = c["image"]
     ids = [int(e.split("/")[-1]) for e in c["episode"]]
     episodes = [[e["id"], e["name"]] for e in get(epi + "/" + str(ids)).json()]
