@@ -1,0 +1,7 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<ul>
+<p>Lista de episodios: </p>
+    {% for ans in answer %}
+        <li><a href={{ ans.url }}>{{ ans.texto }} </a></li>
+    {% endfor %}
