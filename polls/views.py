@@ -7,11 +7,11 @@ from requests import get
 class Lista:
     def __init__(self, tipo, id, *args):
         if tipo == "episode":
-            self.url = "http://127.0.0.1:8000/episodio/" + str(id)
+            self.url = "https://guarded-beyond-82270.herokuapp.com/" + str(id)
         elif tipo == "character":
-            self.url = "http://127.0.0.1:8000/personaje/" + str(id)
+            self.url = "https://guarded-beyond-82270.herokuapp.com/" + str(id)
         elif tipo == "location":
-            self.url = "http://127.0.0.1:8000/lugar/" + str(id)
+            self.url = "https://guarded-beyond-82270.herokuapp.com/" + str(id)
         self.texto = paragraph(*args)
 
 
@@ -57,9 +57,9 @@ def episodio(request, epi_id):
 def personaje(request, char_id):
     c = get(cha + "/" + char_id).json()
     texto = [c["name"], c["status"], c["species"], c["type"], c["gender"],
-             c["location"]["name"], "http://127.0.0.1:8000/lugar/" + c["location"]["url"].split("/")[-1]]
+             c["location"]["name"], "https://guarded-beyond-82270.herokuapp.com//lugar/" + c["location"]["url"].split("/")[-1]]
     origen_nombre = c["origin"]["name"]
-    origen_url = "http://127.0.0.1:8000/lugar/" + c["origin"]["url"].split("/")[-1]
+    origen_url = "https://guarded-beyond-82270.herokuapp.com//lugar/" + c["origin"]["url"].split("/")[-1]
     foto = c["image"]
     ids = [int(e.split("/")[-1]) for e in c["episode"]]
     episodes = [[e["id"], e["name"]] for e in get(epi + "/" + str(ids)).json()]
