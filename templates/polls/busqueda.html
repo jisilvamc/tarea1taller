@@ -1,5 +1,11 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<form action="/busqueda/" method="get">
+    <label>
+        <input type="text" value="" name="mytextbox" size="1"/>
+    </label>
+    <input type="submit" class="btn" value="Buscar" name="mybtn">
+</form>
 <ul>
 <p>Episodios: </p>
 {% if episodios != "" %}

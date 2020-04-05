@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from requests import get
 
-heroku = "http://127.0.0.1:8000/"
+heroku = "https://guarded-beyond-82270.herokuapp.com/"  # "http://127.0.0.1:8000/"
 
 
 class Lista:
@@ -91,8 +91,8 @@ def lugar(request, loc_id):  # CAMBIAR ordenar
     return render(request, 'polls/lugar.html', context)
 
 
-def busqueda(request, bus):
-    bus = bus.replace("+", " ")
+def busqueda(request):
+    bus = request.GET.get('mytextbox')
     # buscar episodio
     iterador = get(epi, params={"name": bus}).json()
     if "error" not in iterador.keys():
