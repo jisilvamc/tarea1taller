@@ -1,0 +1,1 @@
+web: gunicorn tarea1taller.wsgi
