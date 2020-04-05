@@ -6,5 +6,5 @@ url(r'^$', views.index, name='index'),
 url(r'^episodio/(?P<epi_id>[0-9]+)/$', views.episodio, name='episodio'),
 url(r'^personaje/(?P<char_id>[0-9]+)/$', views.personaje, name='personaje'),
 url(r'^lugar/(?P<loc_id>[0-9]+)/$', views.lugar, name='lugar'),
-url(r'^busqueda/(?P<bus_id>)/$', views.busqueda, name='busqueda'),
+url(r'^busqueda/(?P<bus>[\s\S]+)/$', views.busqueda),
 ]

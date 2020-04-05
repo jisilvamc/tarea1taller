@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from requests import get
 
-heroku = "https://guarded-beyond-82270.herokuapp.com/"
+heroku = "http://127.0.0.1:8000/"
 
 
 class Lista:
@@ -92,42 +92,35 @@ def lugar(request, loc_id):  # CAMBIAR ordenar
 
 
 def busqueda(request, bus):
-    nombre = "Earth"
+    bus = bus.replace("+", " ")
     # buscar episodio
-    ans = paragraph("Episodios: ")
-    iterador = get(epi, params={"name": nombre}).json()
+    iterador = get(epi, params={"name": bus}).json()
     if "error" not in iterador.keys():
-        episodes = [e["name"] for e in iterador["results"]]
+        episodes = [[heroku + "episodio/" + i["url"].split("/")[-1], i["name"]] for i in iterador["results"]]
         if iterador["info"]["pages"] > 1:
             iterador = get(iterador["info"]["next"]).json()
-            episodes.extend([i["name"] for i in iterador["results"]])
-        for e in episodes:
-            ans += paragraph(e)
+            episodes.extend([[heroku + "episodio/" + i["url"].split("/")[-1], i["name"]] for i in iterador["results"]])
     else:
-        ans += paragraph("---")
+        episodes = ""
+    context = {"episodios": episodes}
     # buscar personaje
-    ans += paragraph("Personajes: ")
-    iterador = get(cha, params={"name": nombre}).json()
+    iterador = get(cha, params={"name": bus}).json()
     if "error" not in iterador.keys():
-        characters = [c["name"] for c in iterador["results"]]
+        personajes = [[heroku + "personaje/" + i["url"].split("/")[-1], i["name"]] for i in iterador["results"]]
         if iterador["info"]["pages"] > 1:
             iterador = get(iterador["info"]["next"]).json()
-            characters.extend([c["name"] for c in iterador["results"]])
-        for c in characters:
-            ans += paragraph(c)
+            personajes.extend([[heroku + "personaje/" + i["url"].split("/")[-1], i["name"]] for i in iterador["results"]])
     else:
-        ans += paragraph("---")
+        personajes = ""
+    context["personajes"] = personajes
     # buscar lugar
-    ans += paragraph("Lugares: ")
-    iterador = get(loc, params={"name": nombre}).json()
+    iterador = get(loc, params={"name": bus}).json()
     if "error" not in iterador.keys():
-        locations = [l["name"] for l in iterador["results"]]
+        lugares = [[heroku + "lugar/" + i["url"].split("/")[-1], i["name"]] for i in iterador["results"]]
         if iterador["info"]["pages"] > 1:
             iterador = get(iterador["info"]["next"]).json()
-            locations.extend([i["name"] for i in iterador["results"]])
-        for l in locations:
-            ans += paragraph(l)
+            lugares.extend([[heroku + "lugar/" + i["url"].split("/")[-1], i["name"]] for i in iterador["results"]])
     else:
-        ans += paragraph("---")
-    return HttpResponse(ans)
-    # return render(request, 'polls/busqueda.html', context)
+        lugares = ""
+    context["lugares"] = lugares
+    return render(request, 'polls/busqueda.html', context)

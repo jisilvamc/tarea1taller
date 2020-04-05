@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e72d412d-5c9b-492c-a8a6-675486d67d59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/polls/personaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/polls/personaje.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a2j1hRhYonAMz1RbpWzLKv8D1U" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -80,7 +84,8 @@
       <workItem from="1586099173853" duration="276000" />
       <workItem from="1586100366077" duration="692000" />
       <workItem from="1586102067956" duration="176000" />
-      <workItem from="1586102324345" duration="773000" />
+      <workItem from="1586102324345" duration="953000" />
+      <workItem from="1586114292535" duration="2287000" />
     </task>
     <servers />
   </component>
