@@ -6,8 +6,16 @@
 <p> Especie: {{ texto.2 }} </p>
 <p> Tipo: {{ texto.3 }} </p>
 <p> Sexo: {{ texto.4 }} </p>
+    {% if texto.5 != "unknown" %}
     <p> Localización actual: <a href={{ texto.6 }}> {{ texto.5 }} </a></p>
+        {% else %}
+        <p> Localización actual: {{ texto.5 }} </p>
+    {% endif %}
+{% if origen != "unknown" %}
     <p>Origen: <a href={{ origen_url }}> {{ origen }} </a></p>
+{% else %}
+    <p>Origen: {{ origen }} </p>
+{% endif %}
     <p> <img src={{ foto }} alt = {{ foto }}> </p>
     {% for ans in answer %}
         <li><a href={{ ans.url }}>{{ ans.texto }} </a></li>
