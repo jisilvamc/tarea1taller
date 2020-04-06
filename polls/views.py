@@ -17,7 +17,7 @@ class Lista:
         self.texto = paragraph(*args)
 
 
-api = 'https://rickandmortyapi.com/api/'
+api = 'https://integracion-rick-morty-api.herokuapp.com/api/'
 cha, loc, epi = api + 'character', api + 'location', api + 'episode'
 
 

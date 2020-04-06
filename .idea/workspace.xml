@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e72d412d-5c9b-492c-a8a6-675486d67d59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/polls/busqueda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/polls/busqueda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/polls/episodio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/polls/episodio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/polls/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/polls/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/polls/lugar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/polls/lugar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/polls/personaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/polls/personaje.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +86,7 @@
       <workItem from="1586102324345" duration="953000" />
       <workItem from="1586114292535" duration="6729000" />
       <workItem from="1586121121452" duration="137000" />
+      <workItem from="1586139149817" duration="150000" />
     </task>
     <servers />
   </component>
